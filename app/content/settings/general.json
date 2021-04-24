@@ -2,7 +2,7 @@
   "buyLink": "http://abv.bg",
   "loadingColor": "#0b3765",
   "productTitle": "Product title",
-  "logo": "/images/uploads/logo.svg",
+  "logo": "/images/uploads/logo.png",
   "productImage": "/images/uploads/81464027_471079400471586_3271125514441457664_n.jpg",
   "productDescription": "dsjkhfsdf s fshf sf sjf sjhfkshfk shfshf ksfksh fk sf sf sfhsf",
   "welcomeText": "# Yo, I'm Bluise - A Nuxt.js & Netlify CMS boilerplate.\n\nAuthentic cred hoodie hashtag selfies. Raclette banjo cardigan cred. Kitsch XOXO lomo polaroid. Knausgaard put a bird on it four dollar toast leggings typewriter asymmetrical.",
@@ -13,7 +13,7 @@
   "fbLink": "http://abv.bg",
   "title": "Home",
   "icon": "/images/uploads/logo.png",
-  "seoMetaImage": "",
+  "seoMetaImage": "/images/uploads/logo.png",
   "welcomeDescription": "dskfksjkfjkjdfksjflsjkfjsfjklsjfsjflksjf jf sfjs f sjf sjfklsflsjflk sjlf jslfj sklfjlksjflsf",
   "seoDescription": "A quickstart for Nuxt & Netlify CMS"
 }
