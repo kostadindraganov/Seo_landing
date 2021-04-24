@@ -13,7 +13,7 @@
   "fbLink": "http://abv.bg",
   "title": "Home",
   "icon": "/images/uploads/logo.png",
-  "seoMetaImage": "",
+  "seoMetaImage": "/images/uploads/logo.png",
   "welcomeDescription": "dskfksjkfjkjdfksjflsjkfjsfjklsjfsjflksjf jf sfjs f sjf sjfklsflsjflk sjlf jslfj sklfjlksjflsf",
   "seoDescription": "A quickstart for Nuxt & Netlify CMS"
 }
