@@ -1,10 +1,19 @@
 {
-  "title": "Home",
-  "titleTemplate": "| Bluise",
-  "welcomeText": "# Yo, I'm Bluise - A Nuxt.js & Netlify CMS boilerplate.\n\nAuthentic cred hoodie hashtag selfies. Raclette banjo cardigan cred. Kitsch XOXO lomo polaroid. Knausgaard put a bird on it four dollar toast leggings typewriter asymmetrical.",
-  "logo": "/images/uploads/logo.svg",
-  "icon": "/images/uploads/logo.png",
+  "buyLink": "http://abv.bg",
   "loadingColor": "#0b3765",
-  "seoDescription": "A quickstart for Nuxt & Netlify CMS",
-  "seoMetaImage": ""
+  "productTitle": "Product title",
+  "logo": "/images/uploads/logo.svg",
+  "productImage": "/images/uploads/81464027_471079400471586_3271125514441457664_n.jpg",
+  "productDescription": "dsjkhfsdf s fshf sf sjf sjhfkshfk shfshf ksfksh fk sf sf sfhsf",
+  "welcomeText": "# Yo, I'm Bluise - A Nuxt.js & Netlify CMS boilerplate.\n\nAuthentic cred hoodie hashtag selfies. Raclette banjo cardigan cred. Kitsch XOXO lomo polaroid. Knausgaard put a bird on it four dollar toast leggings typewriter asymmetrical.",
+  "titleTemplate": "| Bluise",
+  "ytLink": "http://abv.bg",
+  "videoLink": "https://youtu.be/7ONc6umZ3ZY",
+  "welcomeTitle": "jdhsfjhjfhjsfjsjfhjshfsdfhdsf",
+  "fbLink": "http://abv.bg",
+  "title": "Home",
+  "icon": "/images/uploads/logo.png",
+  "seoMetaImage": "",
+  "welcomeDescription": "dskfksjkfjkjdfksjflsjkfjsfjklsjfsjflksjf jf sfjs f sjf sjfklsflsjflk sjlf jslfj sklfjlksjflsf",
+  "seoDescription": "A quickstart for Nuxt & Netlify CMS"
 }
