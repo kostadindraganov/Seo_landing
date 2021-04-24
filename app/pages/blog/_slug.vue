@@ -36,6 +36,7 @@ import { MetaInfo } from 'vue-meta';
 export default class BlogPost extends Vue {
   post!: Post;
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   async asyncData({ params, payload }): Promise<{ post: Post }> {
     if (payload) {
       return { post: payload };

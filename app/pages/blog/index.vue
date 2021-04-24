@@ -64,6 +64,7 @@ export default class BlogIndex extends Vue {
 
   posts: Post[] = [];
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   async asyncData({ params, store }) {
     const page: number = params.page ? parseInt(params.page, 10) : 1;
     const { perPage }: { perPage: number } = store.state;

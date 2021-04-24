@@ -4,6 +4,7 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     project: './tsconfig.json',
     extraFileExtensions: ['.vue'],
+    createDefaultProgram: true,
   },
   env: {
     browser: true,
@@ -59,8 +60,8 @@ module.exports = {
           resolve: {
             extensions: ['.js', '.json', '.ts', '.vue'],
             alias: {
-              '~': __dirname + '/app',
-              '@': __dirname + '/app',
+              '~': `${__dirname}/app`,
+              '@': `${__dirname}/app`,
             },
           },
         },

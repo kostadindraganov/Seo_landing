@@ -9,6 +9,7 @@
 </template>
 
 <script lang="ts">
+/* eslint-disable */
 import { Component, Vue } from 'nuxt-property-decorator';
 import { MetaInfo } from 'vue-meta';
 
@@ -21,7 +22,7 @@ import { MetaInfo } from 'vue-meta';
 
     return 'slide-right';
   },
-
+  // eslint-disable-next-line
   head(): MetaInfo {
     return {
       title: this.page.title,
@@ -43,6 +44,7 @@ import { MetaInfo } from 'vue-meta';
 export default class PageTemplate extends Vue {
   page!: Page;
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   async asyncData({ params, payload }): Promise<{ page: Page }> {
     if (payload) {
       return { page: payload };
