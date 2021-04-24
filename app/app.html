@@ -2,11 +2,11 @@
 <html {{ HTML_ATTRS }}>
   <head>
     {{ HEAD }}
+
   </head>
 
-  <body {{ BODY_ATTRS }}>
+  <body {{ BODY_ATTRS }} class="is-boxed has-animations">
     {{ APP }}
-
     <noscript>
       <noframes>
         You maybe have disabled JavaScript and Frames, please enable JavaScript or frames in You
@@ -17,5 +17,42 @@
         <a href="http://tutorial.com/how-to-enable-frames">How to enable frames</a>
       </noframes>
     </noscript>
+
   </body>
 </html>
+
+<script>
+  (function () {
+  const doc = document
+  const rootEl = doc.documentElement
+  const {body} = doc
+  const lightSwitch = doc.getElementById('lights-toggle')
+
+
+  window.addEventListener('load', function () {
+    body.classList.add('is-loaded')
+  })
+
+
+  // Light switcher
+  if (lightSwitch) {
+    window.addEventListener('load', checkLights)
+    lightSwitch.addEventListener('change', checkLights)
+  }
+
+  function checkLights () {
+    const labelText = lightSwitch.parentNode.querySelector('.label-text')
+    if (lightSwitch.checked) {
+      body.classList.remove('lights-off')
+      if (labelText) {
+        labelText.innerHTML = 'dark'
+      }
+    } else {
+      body.classList.add('lights-off')
+      if (labelText) {
+        labelText.innerHTML = 'light'
+      }
+    }
+  }
+}())
+</script>

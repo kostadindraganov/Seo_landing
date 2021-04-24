@@ -49,17 +49,17 @@ const nuxtConfig: Configuration = {
   /*
    ** Global CSS
    */
-  css: ['@/assets/css/main.scss'],
+  css: ['@/assets/scss/style.scss'],
 
   styleResources: {
-    scss: ['~assets/css/_variables.scss', '~assets/css/_mixins.scss'],
+    scss: ['~assets/scss/abstracts/_variables.scss', '~assets/scss/abstracts/_mixins.scss'],
   },
 
   generate: {
     subFolders: false,
 
     routes: [
-      ...fg.sync(['./app/content/blog/**.json', './app/content/pages/**.json']).map(url => ({
+      ...fg.sync(['./app/content/blog/**.json', './app/content/pages/**.json']).map((url) => ({
         route: url.replace(/^.\/app\/content(\/pages)?|.json$/gi, ''),
         payload: require(url),
       })),
@@ -75,7 +75,6 @@ const nuxtConfig: Configuration = {
    ** Nuxt.js modules
    */
   modules: ['@nuxtjs/pwa', '@nuxtjs/style-resources', '@nuxtjs/markdownit'],
-
 
   markdownit: {
     preset: 'default',
