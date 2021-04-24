@@ -22,7 +22,15 @@ collections:
         fields:
           - { label: Title, name: title, widget: string }
           - { label: 'Title Template', name: titleTemplate, widget: string }
-          - { label: 'Welcome Text', name: welcomeText, widget: markdown }
+          - { label: 'Welcome Title', name: welcomeTitle, widget: string }
+          - { label: 'Welcome Description', name: welcomeDescription, widget: markdown }
+          - { label: 'Video link', name: videoLink, widget: string }
+          - { label: 'Product Title', name:productTitle, widget: string }
+          - { label: 'Product Description', name: productDescription, widget: markdown }
+          - { label: Product Image, name: productImage, widget: image }
+          - { label: 'Buy now link', name: buyLink, widget: string }
+          - { label: 'Facebook', name: fbLink, widget: string }
+          - { label: 'YouTube', name: ytLink, widget: string }
           - { label: Logo, name: logo, widget: image }
           - { label: Icon, name: icon, widget: image }
           - { label: 'Loading Color', name: loadingColor, widget: string, default: '#000000' }
