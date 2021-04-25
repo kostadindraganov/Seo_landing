@@ -2,7 +2,6 @@
 <html {{ HTML_ATTRS }}>
   <head>
     {{ HEAD }}
-
   </head>
 
   <body {{ BODY_ATTRS }} class="is-boxed has-animations">
@@ -20,3 +19,39 @@
 
   </body>
 </html>
+
+
+<script>
+  (function () {
+  const doc = document
+  const rootEl = doc.documentElement
+  const {body} = doc
+  const lightSwitch = doc.getElementById('lights-toggle')
+
+
+  window.addEventListener('load', function () {
+    body.classList.add('is-loaded')
+  })
+
+  function checkLights () {
+    const labelText = lightSwitch.parentNode.querySelector('.label-text')
+    if (lightSwitch.checked) {
+      body.classList.remove('lights-off')
+      if (labelText) {
+        labelText.innerHTML = 'dark'
+      }
+    } else {
+      body.classList.add('lights-off')
+      if (labelText) {
+        labelText.innerHTML = 'light'
+      }
+    }
+  }
+  // Light switcher
+  if (lightSwitch) {
+    window.addEventListener('load', checkLights)
+    lightSwitch.addEventListener('change', checkLights)
+  }
+
+}())
+</script>
