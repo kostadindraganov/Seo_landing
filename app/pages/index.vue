@@ -186,7 +186,7 @@
                 />
                 <img
                   class="features-illustration asset-light"
-                  src="images/features-illustration-top-light.svg"
+                  :src="productImage"
                   alt="Feature illustration top"
                 />
               </div>
@@ -277,8 +277,8 @@ import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css';
     return {
       items: [
         {
-          title: 'In nature, nothing is perfect and everything is perfect',
-          description: 'Photo by Lucas',
+          title: settings.productTitle,
+          description: settings.welcomeDescription,
           thumb: settings.productImage,
           src: settings.videoLink,
         },
