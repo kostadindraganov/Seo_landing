@@ -81,23 +81,23 @@
 
 .button-primary {
 	color: color(typography, 1i) !important;
-	background-color: color(primary, 1);
+	background-color: color(secondary, 1);
 
     &:hover {
-        background: lighten(color(primary, 1), 1%);
+        background: lighten(color(secondary, 1), 1%);
     }
 
     &.button-shadow {
 
         &::before {
-            box-shadow: 0 8px 16px rgba(color(primary, 1), .25);
+            box-shadow: 0 8px 16px rgba(color(secondary, 1), .25);
 			mix-blend-mode: normal;
         }
 
         &:hover {
 
             &::before {
-                box-shadow: 0 8px 16px rgba(color(primary, 1), .35);
+                box-shadow: 0 8px 16px rgba(color(secondary, 1), .35);
             }
         }
     }
@@ -107,13 +107,13 @@
         &.button-shadow {
 
             &::before {
-                box-shadow: 0 4px 16px rgba(color(primary, 1), .25);
+                box-shadow: 0 4px 16px rgba(color(secondary, 1), .25);
             }
 
             &:hover {
 
                 &::before {
-                    box-shadow: 0 4px 16px rgba(color(primary, 1), .35);
+                    box-shadow: 0 4px 16px rgba(color(secondary, 1), .35);
                 }
             }
         }

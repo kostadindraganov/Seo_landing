@@ -35,8 +35,8 @@
       <div class="site-header-inner">
         <div class="brand header-brand">
           <nuxt-link to="/" class="mt-0">
-            <img class="header-logo-image asset-light" :src="logo" alt="Logo" />
-            <img class="header-logo-image asset-dark" :src="logo" alt="Logo" />
+            <img class="header-logo-image asset-light w-1/5" :src="logo" alt="Logo" />
+            <img class="header-logo-image asset-dark w-1/5" :src="logo" alt="Logo" />
           </nuxt-link>
         </div>
       </div>

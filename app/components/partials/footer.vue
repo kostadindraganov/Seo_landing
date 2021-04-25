@@ -4,11 +4,11 @@
       <div class="site-footer-inner">
         <div class="brand footer-brand">
           <a href="#">
-            <img class="asset-light" src="images/logo-light.svg" alt="Logo" />
-            <img class="asset-dark" src="images/logo-dark.svg" alt="Logo" />
+            <img class="asset-light w-8" :src="logo" alt="Logo" />
+            <img class="asset-dark w-8" :src="logo" alt="Logo" />
           </a>
         </div>
-        <ul class="footer-links list-reset">
+        <!-- <ul class="footer-links list-reset">
           <li>
             <a href="#">Contact</a>
           </li>
@@ -21,10 +21,10 @@
           <li>
             <a href="#">Support</a>
           </li>
-        </ul>
+        </ul> -->
         <ul class="footer-social-links list-reset">
           <li>
-            <a href="#">
+            <a :href="fbLink" target="_blank">
               <span class="screen-reader-text">Facebook</span>
               <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -35,29 +35,23 @@
             </a>
           </li>
           <li>
-            <a href="#">
-              <span class="screen-reader-text">Twitter</span>
-              <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+            <a :href="ytLink" target="_blank">
+              <span class="screen-reader-text">Youtube</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#ffffff"
+                viewBox="0 0 30 30"
+                width="16px"
+                height="16px"
+              >
                 <path
-                  d="M16 3c-.6.3-1.2.4-1.9.5.7-.4 1.2-1 1.4-1.8-.6.4-1.3.6-2.1.8-.6-.6-1.5-1-2.4-1-1.7 0-3.2 1.5-3.2 3.3 0 .3 0 .5.1.7-2.7-.1-5.2-1.4-6.8-3.4-.3.5-.4 1-.4 1.7 0 1.1.6 2.1 1.5 2.7-.5 0-1-.2-1.5-.4C.7 7.7 1.8 9 3.3 9.3c-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.6 2.3 3.1 2.3-1.1.9-2.5 1.4-4.1 1.4H0c1.5.9 3.2 1.5 5 1.5 6 0 9.3-5 9.3-9.3v-.4C15 4.3 15.6 3.7 16 3z"
-                  fill="#FFF"
-                />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="screen-reader-text">Google</span>
-              <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M7.9 7v2.4H12c-.2 1-1.2 3-4 3-2.4 0-4.3-2-4.3-4.4 0-2.4 2-4.4 4.3-4.4 1.4 0 2.3.6 2.8 1.1l1.9-1.8C11.5 1.7 9.9 1 8 1 4.1 1 1 4.1 1 8s3.1 7 7 7c4 0 6.7-2.8 6.7-6.8 0-.5 0-.8-.1-1.2H7.9z"
-                  fill="#FFF"
+                  d="M 15 4 C 10.814 4 5.3808594 5.0488281 5.3808594 5.0488281 L 5.3671875 5.0644531 C 3.4606632 5.3693645 2 7.0076245 2 9 L 2 15 L 2 15.001953 L 2 21 L 2 21.001953 A 4 4 0 0 0 5.3769531 24.945312 L 5.3808594 24.951172 C 5.3808594 24.951172 10.814 26.001953 15 26.001953 C 19.186 26.001953 24.619141 24.951172 24.619141 24.951172 L 24.621094 24.949219 A 4 4 0 0 0 28 21.001953 L 28 21 L 28 15.001953 L 28 15 L 28 9 A 4 4 0 0 0 24.623047 5.0546875 L 24.619141 5.0488281 C 24.619141 5.0488281 19.186 4 15 4 z M 12 10.398438 L 20 15 L 12 19.601562 L 12 10.398438 z"
                 />
               </svg>
             </a>
           </li>
         </ul>
-        <div class="footer-copyright">&copy; 2018 Switch, all rights reserved</div>
+        <div class="footer-copyright">&copy; 2021 Crysal Health Club, all rights reserved</div>
       </div>
     </div>
   </footer>
@@ -65,9 +59,16 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
+import settings from '@/content/settings/general.json';
 
 @Component
-export default class Footer extends Vue {}
+export default class Footer extends Vue {
+  fbLink = settings.fbLink;
+
+  ytLink = settings.ytLink;
+
+  logo = settings.logo;
+}
 </script>
 
 <style lang="scss"></style>

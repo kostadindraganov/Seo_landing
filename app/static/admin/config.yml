@@ -26,6 +26,7 @@ collections:
           - { label: 'Welcome Description', name: welcomeDescription, widget: markdown }
           - { label: 'Video link', name: videoLink, widget: string }
           - { label: 'Product Title', name: productTitle, widget: string }
+          - { label: 'Product Sub Title', name: productSubTitle, widget: string }
           - { label: 'Product Description', name: productDescription, widget: markdown }
           - { label: Product Image, name: productImage, widget: image }
           - { label: 'Buy now link', name: buyLink, widget: string }

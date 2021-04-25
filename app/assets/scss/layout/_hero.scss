@@ -25,6 +25,7 @@
 
 .header-illustration {
 	display: none;
+  z-index: 2;
 
 	img,
 	svg {
@@ -53,9 +54,24 @@
 
 .hero-media-container {
 	position: relative;
+  z-index: 5;
+}
+.hero-media-container-light-box {
+  z-index: 333 !important;
 }
 
 .hero-media-image {
+	margin: 0 auto;
+	box-shadow: 48px 16px 48px rgba(color(bg, 1i), .12);
+	border-radius: 4px;
+	transform: perspective(1000px) rotateY(16deg) rotateX(2deg) rotateZ(-7deg) scaleY(.95) translatex(2%);
+
+	.lights-off & {
+		box-shadow: 48px 16px 48px rgba(darken(color(bg, 1i), 35%), .2);
+	}
+}
+
+.hero-media-image-at {
 	margin: 0 auto;
 	box-shadow: 48px 16px 48px rgba(color(bg, 1i), .12);
 	border-radius: 4px;
@@ -133,7 +149,7 @@
 	}
 
 	.hero-media {
-		z-index: 0;
+		z-index: 1;
 
 		img,
 		svg {
@@ -149,4 +165,5 @@
 		width: 1440px;
 		height: 324px;
 	}
+
 }

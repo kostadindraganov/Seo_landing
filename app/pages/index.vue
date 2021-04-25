@@ -47,14 +47,13 @@
       <div class="container">
         <div class="hero-inner">
           <div class="hero-copy">
-            <h1 class="hero-title mt-0">Landing template for startups</h1>
+            <h1 class="hero-title mt-0">{{ welcomeTitle }}</h1>
 
             <p class="hero-paragraph">
-              Our landing page template works on all devices, so you only have to set it up once,
-              and get beautiful results forever.
+              {{ welcomeDescription }}
             </p>
             <div class="hero-cta">
-              <a class="button button-primary" href="#">Buy it now</a>
+              <a class="button button-primary" :href="buyLink" target="_blank">Buy it now</a>
               <div class="lights-toggle">
                 <input
                   id="lights-toggle"
@@ -95,7 +94,7 @@
               />
             </div>
             <div class="hero-media-container">
-              <img
+              <!-- <img
                 class="hero-media-image asset-light"
                 src="images/hero-media-light.svg"
                 alt="Hero media"
@@ -104,7 +103,42 @@
                 class="hero-media-image asset-dark"
                 src="images/hero-media-dark.svg"
                 alt="Hero media"
-              />
+              /> -->
+              <CoolLightBox
+                :items="items"
+                :index="index"
+                @close="index = null"
+                class="hero-media-container-light-box"
+              >
+              </CoolLightBox>
+              <div class="images-wrappe">
+                <div
+                  class="hero-media-image-at asset-light play"
+                  v-for="(image, imageIndex) in items"
+                  :key="imageIndex"
+                  @click="index = imageIndex"
+                  @keypress="index = imageIndex"
+                  :style="{
+                    backgroundImage: 'url(' + image.thumb + ')',
+                    height: '300px',
+                    width: '450px',
+                    cursor: 'pointer',
+                  }"
+                ></div>
+                <div
+                  class="hero-media-image-at asset-dark play"
+                  v-for="(image, imageIndex) in items"
+                  :key="imageIndex"
+                  @click="index = imageIndex"
+                  @keypress="index = imageIndex"
+                  :style="{
+                    backgroundImage: 'url(' + image.thumb + ')',
+                    height: '300px',
+                    width: '450px',
+                    cursor: 'pointer',
+                  }"
+                ></div>
+              </div>
             </div>
           </div>
         </div>
@@ -116,10 +150,9 @@
         <div class="features-inner section-inner has-bottom-divider">
           <div class="features-header text-center">
             <div class="container-sm">
-              <h2 class="section-title mt-0">The Product</h2>
+              <h2 class="section-title mt-0">{{ productTitle }}</h2>
               <p class="section-paragraph">
-                Lorem ipsum is common placeholder text used to demonstrate the graphic elements of a
-                document or visual presentation.
+                {{ productSubTitle }}
               </p>
               <div class="features-image">
                 <img
@@ -143,8 +176,8 @@
                   alt="Feature illustration"
                 />
                 <img
-                  class="features-box asset-light"
-                  src="images/features-box-light.svg"
+                  class="features-box asset-light w-7/12"
+                  :src="productImage"
                   alt="Feature box"
                 />
                 <img
@@ -163,15 +196,14 @@
                   <img class="asset-dark" src="images/feature-01-dark.svg" alt="Feature 01" />
                 </div>
                 <div class="feature-content">
-                  <h3 class="feature-title mt-0">Discover</h3>
+                  <h3 class="feature-title mt-0">MORE INFORMATION</h3>
                   <p class="text-sm mb-0">
-                    Lorem ipsum dolor sit amet, consecte adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua dui.
+                    {{ productDescription }}
                   </p>
                 </div>
               </div>
             </div>
-            <div class="feature is-revealing">
+            <!-- <div class="feature is-revealing">
               <div class="feature-inner">
                 <div class="feature-icon">
                   <img class="asset-light" src="images/feature-02-light.svg" alt="Feature 02" />
@@ -200,7 +232,7 @@
                   </p>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -210,13 +242,12 @@
       <div class="container-sm">
         <div class="cta-inner section-inner">
           <div class="cta-header text-center">
-            <h2 class="section-title mt-0">Get it and Switch</h2>
+            <h2 class="section-title mt-0">Get it Now!</h2>
             <p class="section-paragraph">
-              Lorem ipsum is common placeholder text used to demonstrate the graphic elements of a
-              document or visual presentation.
+              {{ welcomeDescription }}
             </p>
             <div class="cta-cta">
-              <a class="button button-primary" href="#">Buy it now</a>
+              <a class="button button-primary" :href="buyLink" target="_blank">Buy it now</a>
             </div>
           </div>
         </div>
@@ -228,15 +259,44 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
 import settings from '@/content/settings/general.json';
+import CoolLightBox from 'vue-cool-lightbox';
+import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css';
 
 @Component({
-  // Called to know which transition to apply
   transition() {
     return 'slide-left';
   },
+  components: {
+    CoolLightBox,
+  },
+  data() {
+    return {
+      items: [
+        {
+          title: 'In nature, nothing is perfect and everything is perfect',
+          description: 'Photo by Lucas',
+          thumb: settings.productImage,
+          src: settings.videoLink,
+        },
+      ],
+      index: null,
+    };
+  },
 })
 export default class Home extends Vue {
-  welcomeText = settings.welcomeText;
+  welcomeTitle = settings.welcomeTitle;
+
+  welcomeDescription = settings.welcomeDescription;
+
+  productTitle = settings.productTitle;
+
+  productSubTitle = settings.productSubTitle;
+
+  productImage: any = settings.productImage;
+
+  productDescription = settings.productDescription;
+
+  buyLink = settings.buyLink;
 
   get posts(): Post[] {
     return this.$store.state.posts;
@@ -281,3 +341,31 @@ export default class Home extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.play {
+  border-radius: 10% / 10%;
+  color: #ffffff;
+  font-size: 2em; /* change this to change size */
+  margin: 20px auto;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  text-indent: 0.1em;
+  transition: all 150ms ease-out;
+  z-index: 5;
+}
+
+.play::after {
+  border-style: solid;
+  border-width: 1em 0 1em 1.732em;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.85);
+  content: ' ';
+  font-size: 0.75em;
+  height: 0;
+  margin: -1em 0 0 -0.75em;
+  top: 50%;
+  position: absolute;
+  width: 0;
+}
+</style>
