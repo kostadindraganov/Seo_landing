@@ -120,6 +120,8 @@
                   @keypress="index = imageIndex"
                   :style="{
                     backgroundImage: 'url(' + image.thumb + ')',
+                    'background-repeat': 'no-repeat',
+                    'background-size': '100% 100%',
                     height: '300px',
                     width: '450px',
                     cursor: 'pointer',
@@ -133,6 +135,8 @@
                   @keypress="index = imageIndex"
                   :style="{
                     backgroundImage: 'url(' + image.thumb + ')',
+                    'background-repeat': 'no-repeat',
+                    'background-size': '100% 100%',
                     height: '300px',
                     width: '450px',
                     cursor: 'pointer',
