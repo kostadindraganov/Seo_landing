@@ -2,10 +2,12 @@
 <html {{ HTML_ATTRS }}>
   <head>
     {{ HEAD }}
+
   </head>
 
-  <body {{ BODY_ATTRS }} class="is-boxed has-animations">
+  <body {{ BODY_ATTRS }} class="is-boxed has-animations ">
     {{ APP }}
+
     <noscript>
       <noframes>
         You maybe have disabled JavaScript and Frames, please enable JavaScript or frames in You
@@ -20,8 +22,7 @@
   </body>
 </html>
 
-
-<script>
+<!-- <script>
   (function () {
   const doc = document
   const rootEl = doc.documentElement
@@ -32,6 +33,13 @@
   window.addEventListener('load', function () {
     body.classList.add('is-loaded')
   })
+
+
+  // Light switcher
+  if (lightSwitch) {
+    window.addEventListener('load', checkLights)
+    lightSwitch.addEventListener('change', checkLights)
+  }
 
   function checkLights () {
     const labelText = lightSwitch.parentNode.querySelector('.label-text')
@@ -47,11 +55,5 @@
       }
     }
   }
-  // Light switcher
-  if (lightSwitch) {
-    window.addEventListener('load', checkLights)
-    lightSwitch.addEventListener('change', checkLights)
-  }
-
 }())
-</script>
+</script> -->

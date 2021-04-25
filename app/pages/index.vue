@@ -165,8 +165,8 @@
                   alt="Feature illustration"
                 />
                 <img
-                  class="features-box asset-dark"
-                  src="images/features-box-dark.svg"
+                  class="features-box asset-dark max-w-xs"
+                  :src="productImage"
                   alt="Feature box"
                 />
                 <img
@@ -180,13 +180,13 @@
                   alt="Feature illustration"
                 />
                 <img
-                  class="features-box asset-light w-7/12"
+                  class="features-box asset-light max-w-xs"
                   :src="productImage"
                   alt="Feature box"
                 />
                 <img
                   class="features-illustration asset-light"
-                  :src="productImage"
+                  src="images/features-illustration-top-light.svg"
                   alt="Feature illustration top"
                 />
               </div>
@@ -273,19 +273,6 @@ import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css';
   components: {
     CoolLightBox,
   },
-  data() {
-    return {
-      items: [
-        {
-          title: settings.productTitle,
-          description: settings.welcomeDescription,
-          thumb: settings.productImage,
-          src: settings.videoLink,
-        },
-      ],
-      index: null,
-    };
-  },
 })
 export default class Home extends Vue {
   welcomeTitle = settings.welcomeTitle;
@@ -308,9 +295,52 @@ export default class Home extends Vue {
 
   isSignedUp = false;
 
+  checked = 'checked';
+
+  items = [
+    {
+      title: settings.productTitle,
+      description: settings.welcomeDescription,
+      thumb: settings.productImage,
+      src: settings.videoLink,
+    },
+  ];
+
+  index = null;
+
   form = {
     email: '',
   };
+
+  mounted(): void {
+    const doc = document;
+    const { body } = doc;
+    const lightSwitch: any = doc.getElementById('lights-toggle');
+
+    window.addEventListener('load', () => {
+      body.classList.add('is-loaded');
+    });
+
+    function checkLights() {
+      const labelText = lightSwitch.parentNode.querySelector('.label-text');
+      if (lightSwitch.checked) {
+        body.classList.remove('lights-off');
+        if (labelText) {
+          labelText.innerHTML = 'dark';
+        }
+      } else {
+        body.classList.add('lights-off');
+        if (labelText) {
+          labelText.innerHTML = 'light';
+        }
+      }
+    }
+    // Light switcher
+    if (lightSwitch) {
+      window.addEventListener('load', checkLights);
+      lightSwitch.addEventListener('change', checkLights);
+    }
+  }
 
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   encode(data: any): string {
